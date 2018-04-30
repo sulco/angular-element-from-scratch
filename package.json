@@ -13,18 +13,21 @@
     "@webcomponents/custom-elements": "^1.1.0",
     "core-js": "^2.5.5",
     "rxjs": "^6.0.0",
-    "rxjs-compat": "^6.0.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/compiler-cli": "^6.0.0-rc.6",
     "@ngtools/webpack": "^6.0.0-beta.6",
+    "compression-webpack-plugin": "^1.1.11",
+    "http-server": "^0.11.1",
     "typescript": "~2.7.2",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.1.2"
   },
   "scripts": {
-    "start": "webpack"
+    "build": "webpack",
+    "serve": "http-server --gzip"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,7 @@
-const NgCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const path = require('path');
+const NgCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   module: {
@@ -16,8 +18,10 @@ module.exports = {
   plugins: [
     new NgCompilerPlugin({
       tsConfigPath: './tsconfig.json',
-      entryModule: path.resolve(__dirname, './src/button.module#ButtonModule')
-    })
+      mainPath: './src/index.ts'
+    }),
+    new UglifyJsPlugin(),
+    new CompressionPlugin()
   ],
   mode: 'production',
   stats: 'errors-only'

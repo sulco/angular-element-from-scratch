@@ -3,20 +3,21 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Custom Button Test Page</title>
   <script src="dist/main.js"></script>
 </head>
 
 <body>
-  <custom-button label="another"></custom-button>
+  <custom-button label="First Value"></custom-button>
 
   <script>
     const button = document.querySelector('custom-button');
+
     button.addEventListener('action', (event) => {
       console.log(`"action" emitted: ${event.detail}`);
     })
+
+    setTimeout(() => button.label = 'Second Value', 3000);
   </script>
 </body>
 
